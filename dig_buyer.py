@@ -14,9 +14,13 @@ def digData():
     getBuyer_url="https://app.axya.co/_next/data/Vmfu08oe_-eTMtqKGdeUG/en/search/buyers.json"
     getBuyer_url_number="https://app.axya.co/_next/data/Vmfu08oe_-eTMtqKGdeUG/en/search/buyers.json?page="
     searchBuyer_url="https://app.axya.co/api/v1/buyersDiscovery/"
+    # loginCredential ={
+    #         'email': "lihaoyuan0531@hotmail.com",
+    #         'password':'Tyson0531!'
+    # }
     loginCredential ={
-            'email': "lihaoyuan0531@hotmail.com",
-            'password':'Tyson0531!'
+            'email': "gw@weldmatic.ca",
+            'password':'Lifesucks213!'
     }
 
     emailCredential = {
@@ -38,11 +42,12 @@ def digData():
         }
     with requests.session() as s:
         responseLoginPage = s.get(url='https://app.axya.co/auth/login',headers=hearderLoginPage)
-        # print(response.request.headers)
+        print(responseLoginPage.request.headers)
         responseLogin=s.post(url=login_url,json=loginCredential,headers=headerLogin)
-
+        print("------------------")
+        print(responseLogin.content)
         login_ephemeral_token=responseLogin.json()["ephemeral_token"]
-        login_ephemeral_method=responseLogin.json()["email"]
+        login_ephemeral_method=responseLogin.json()["method"]
 
         email_code = input("please check your email and enter the code")
 
@@ -102,8 +107,8 @@ def digData():
 
         companiesDetailBuyer=[]
         formateCompanies_buyer(companiesResultBuyer,companiesDetailBuyer)
-        # for i in range (2,59):
-        for i in range (2,4):
+        for i in range (2,59):
+        # for i in range (2,4):
             print(i)
             targetUrl = getBuyer_url_number+str(i)
             
@@ -112,7 +117,7 @@ def digData():
             companiesResultBuyer_number=buyersData_number['pageProps']['results']
             formateCompanies_buyer(companiesResultBuyer_number,companiesDetailBuyer)
         fieldsIds = ['id','name']
-        fieldsFinal=['id','name','phone_number','website','email','country','city','street']
+        fieldsFinal=['id','name','phone_number','website','email','postal_code','country','city','street']
         fileName_Buyer="buyer.csv"
         fileName_Buyer_final="buyerFinal.csv"  
         writeToCSV(fieldsIds,fileName_Buyer,companiesDetailBuyer)
@@ -125,21 +130,27 @@ def getFinalResult(searchBuyer_url,hearderAuth):
     buyersIds=buyers_csv['id'].tolist()
     result = []
     for id in buyersIds:
+        print(id)
         searchBuyers_url_target=searchBuyer_url+str(id)
         buyers_search_response=requests.get(url=searchBuyers_url_target,headers=hearderAuth)
 
         buyers_search_data = json.loads(buyers_search_response.text)
-
-        tempdic={}
-        tempdic['id']=buyers_search_data.get('id')
-        tempdic['name']=buyers_search_data.get('name')
-        tempdic['phone_number']=buyers_search_data.get('phone_number')
-        tempdic['website']=buyers_search_data.get('website')
-        tempdic['email']=buyers_search_data.get('email')
-        tempdic['country']=buyers_search_data['address'].get('country')
-        tempdic['city']=buyers_search_data['address'].get('city')
-        tempdic['street']=buyers_search_data['address'].get('street')
-        result.append(tempdic)
+        if (buyers_search_data.get('detail') =="Not found."):
+            continue
+        else:
+            print(buyers_search_data)
+            tempdic={}
+            tempdic['id']=buyers_search_data.get('id')
+            tempdic['name']=buyers_search_data.get('name')
+            tempdic['phone_number']=buyers_search_data.get('phone_number')
+            tempdic['website']=buyers_search_data.get('website')
+            tempdic['email']=buyers_search_data.get('email')
+            tempdic['postal_code']=buyers_search_data.get('address').get('postal_code')
+            tempdic['country']=buyers_search_data.get('address').get('country')
+            tempdic['city']=buyers_search_data.get('address').get('city')
+            tempdic['street']=buyers_search_data.get('address').get('street')
+            
+            result.append(tempdic)
     return result
 
 def formateCompanies_buyer(companiesResult,companiesDetail):

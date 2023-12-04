@@ -1,6 +1,3 @@
-quote = '成功を収める人とは人が投げてきたレンガでしっかりした基盤を築くことができる人のことである。'
+a={'id': 1168, 'name': 'Laserax Inc.', 'picture': 'https://grad4-static-data.s3.amazonaws.com/image/company/Laserax.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2RFSOPTN3OPPY3UA%2F20231204%2Fca-central-1%2Fs3%2Faws4_request&X-Amz-Date=20231204T184506Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=37f78107e7166030c27dbfedb5264b64318e22883b2bdfd72756697d42de7079', 'connection': None, 'connection_status': 'NOT_CONNECTED', 'rich_description': '', 'website': 'https://www.laserax.com/', 'phone_number': '+1 (418) 478-1029', 'address': {'id': 1177, 'street': '101-2811 Watt Ave', 'city': 'Québec', 'province': 'Québec', 'postal_code': 'G1X 4S8', 'country': 'Canada', 'longitude': '-71.311587', 'latitude': '46.784173'}, 'marketplace_rfq_count': 51, 'private_rfq_count': 566, 'po_count': 541, 'parts': [{'pk': 69513, 'name': 'OP464-9014_R00', 'quantity': 1}, {'pk': 69512, 'name': 'OP464-9015_R00', 'quantity': 2}, {'pk': 69511, 'name': 'OP494-9016_R00', 'quantity': 1}, {'pk': 68646, 'name': 'BCWS BOM Mécanique', 'quantity': 3}, {'pk': 68579, 'name': 'EI465-0011_R00', 'quantity': 1}, {'pk': 68578, 'name': 'EI465-0010_R00', 'quantity': 1}, {'pk': 68577, 'name': 'EI465-0009_R00', 'quantity': 1}, {'pk': 68576, 'name': 'EI465-0008_R00', 'quantity': 1}, {'pk': 68566, 'name': 'EI465-0007_R00', 'quantity': 1}, {'pk': 68565, 'name': 'EI465-0006_R00', 'quantity': 1}]}
 
-with open('quotes.txt', 'a', encoding='utf-8') as f:
-    f.write(quote)
-
-    f.close()
+print(a.get('address').get('country'))
