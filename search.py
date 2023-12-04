@@ -163,24 +163,24 @@ def getSupplieFinalResult(data,hearderAuth):
     suppliers_csv=read_csv("buyer.csv")
     suppliersIds=suppliers_csv['id'].tolist()
     print(suppliersIds)
-    # searchSupplier_url="https://app.axya.co/api/v1/supplierProfile/"
-    # # print(type(suppliersIds[]))
-    # result = []
-    # for id in suppliersIds:
-    #     searchSupplier_url_target=searchSupplier_url+str(id)
-    #     supplier_search_response=requests.get(url=searchSupplier_url_target,headers=hearderAuth)
+    searchSupplier_url="https://app.axya.co/api/v1/supplierProfile/"
+    # print(type(suppliersIds[]))
+    result = []
+    for id in suppliersIds:
+        searchSupplier_url_target=searchSupplier_url+str(id)
+        supplier_search_response=requests.get(url=searchSupplier_url_target,headers=hearderAuth)
 
-    #     supplier_search_data = json.loads(supplier_search_response.text)
+        supplier_search_data = json.loads(supplier_search_response.text)
 
-    #     dic1={}
-    #     dic1['name']=supplier_search_data.get('name')
-    #     dic1['phone_number']=supplier_search_data.get('phone_number')
-    #     dic1['website']=supplier_search_data.get('website')
-    #     dic1['email']=supplier_search_data.get('email')
-    #     dic1['country']=supplier_search_data['address'].get('country')
-    #     dic1['city']=supplier_search_data['address'].get('city')
-    #     dic1['street']=supplier_search_data['address'].get('street')
-    #     result.append(dic1)
+        dic1={}
+        dic1['name']=supplier_search_data.get('name')
+        dic1['phone_number']=supplier_search_data.get('phone_number')
+        dic1['website']=supplier_search_data.get('website')
+        dic1['email']=supplier_search_data.get('email')
+        dic1['country']=supplier_search_data['address'].get('country')
+        dic1['city']=supplier_search_data['address'].get('city')
+        dic1['street']=supplier_search_data['address'].get('street')
+        result.append(dic1)
     
     
 

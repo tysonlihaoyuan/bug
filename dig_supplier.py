@@ -13,6 +13,7 @@ def digData():
     getSupplier_url="https://app.axya.co/_next/data/Vmfu08oe_-eTMtqKGdeUG/en/search/suppliers.json"
     getSupplier_url_number="https://app.axya.co/_next/data/Vmfu08oe_-eTMtqKGdeUG/en/search/suppliers.json?q=&page="
     searchSupplier_url="https://app.axya.co/api/v1/supplierProfile/"
+    check_email_code="https://app.axya.co/api/v1/login/code/"
     loginCredential ={
             'email': "lihaoyuan0531@hotmail.com",
             'password':'Tyson0531!'
@@ -39,10 +40,28 @@ def digData():
         responseLoginPage = s.get(url='https://app.axya.co/auth/login',headers=hearderLoginPage)
         # print(response.request.headers)
         responseLogin=s.post(url=login_url,json=loginCredential,headers=headerLogin)
+
+        login_ephemeral_token=responseLogin.json()["ephemeral_token"]
+        login_ephemeral_method=responseLogin.json()["email"]
+
+        email_code = input("please check your email and enter the code")
+
+        verification = {
+            "code" : str(email_code),
+            "ephemeral_token": str(login_ephemeral_token)
+        }
+
+        responseLoginAfterCode  =s.post(url=check_email_code,json=verification,headers=headerLogin)
+
+
+
+
+
+
         # print(responseLogin.request.headers)
         # print (responseLogin.content)
         #get auth token
-        token = responseLogin.json()["token"]
+        token = responseLoginAfterCode.json()["token"]
         authToken = 'JWT {}'.format(token)
         print('JWT {}'.format(token))
         responseCheckEmail=s.post(url=checkemail_url,json=emailCredential,headers=headerLogin)

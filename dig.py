@@ -94,22 +94,24 @@ def digData():
             buyersData_number= json.loads(responseBuyers_number.text)
             companiesResultBuyer_number=buyersData_number['pageProps']['results']
             formateCompanies_buyer(companiesResultBuyer_number,companiesDetailBuyer)
-        # companiesDetailSupplier=[]
-        # responseSupplier= s.get(getSupplier_url)
-        # supplierData = json.loads(responseSupplier.text)
-        # # print(supplierData)
-        # companiesResultSupplier=supplierData['pageProps']['facets']['companies']
-        # # print(companiesResultSupplier)
-        # formateCompanies_supplier(companiesResultSupplier,companiesDetailSupplier)
-        # for i in range (2,2001):
-        #     print(i)
-        #     targetUrl = getSupplier_url_number+str(i)
+
             
-        #     responseSuppliers_number=s.get(targetUrl)
-        #     supplierData_number= json.loads(responseSuppliers_number.text)
-        #     companiesResultSupplier_number=supplierData_number['pageProps']['facets']['companies']
-        #     formateCompanies_supplier(companiesResultSupplier_number,companiesDetailSupplier)
-        # print(companiesDetailSupplier)
+        companiesDetailSupplier=[]
+        responseSupplier= s.get(getSupplier_url)
+        supplierData = json.loads(responseSupplier.text)
+        # print(supplierData)
+        companiesResultSupplier=supplierData['pageProps']['facets']['companies']
+        # print(companiesResultSupplier)
+        formateCompanies_supplier(companiesResultSupplier,companiesDetailSupplier)
+        for i in range (2,2001):
+            print(i)
+            targetUrl = getSupplier_url_number+str(i)
+            
+            responseSuppliers_number=s.get(targetUrl)
+            supplierData_number= json.loads(responseSuppliers_number.text)
+            companiesResultSupplier_number=supplierData_number['pageProps']['facets']['companies']
+            formateCompanies_supplier(companiesResultSupplier_number,companiesDetailSupplier)
+        print(companiesDetailSupplier)
         fields = ['id','name','country','city','street','postal_code']
         fileName_Buyer="buyer.csv"
         fileName_Supplier="supplier.csv"   

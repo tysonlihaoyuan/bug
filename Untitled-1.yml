@@ -1,0 +1,209 @@
+{"ephemeral_token":"21332-s54jel-86550ccb88b72acc26d83fc2fadb40ca892b1577","method":"email"}
+
+curl "https://app.axya.co/api/v1/login/" ^
+  -H "authority: app.axya.co" ^
+  -H "accept: application/json, text/plain, */*" ^
+  -H "accept-language: en" ^
+  -H "content-type: application/json" ^
+  -H "cookie: sessionid=kv2ale88lw87nrqdas8igfgro0pwnqsv; _hjSessionUser_3495031=eyJpZCI6ImRmMTk5NGI4LTZhYzItNTAzYS1hYzFlLTAzNThkOWQ4MzJiYiIsImNyZWF0ZWQiOjE3MDEzOTA4NzU3ODAsImV4aXN0aW5nIjp0cnVlfQ==; __Host-next-auth.csrf-token=140664429f004dea010378e43e0ee2cdc578024dd3d7ac17dfa3e14a55965ca2^%^7Cfe651b4db25d3d5f837d97cdd40f1594d4d15e24d39da0a915d36419c5bc06dd; __Secure-next-auth.callback-url=https^%^3A^%^2F^%^2Faxya.co; amp_abb530=qUtD2OoO54ZoCpZLNNKw_L.Z3dAd2VsZG1hdGljLmNh..1hgpg0scg.1hgpg0scg.4.0.4; _gid=GA1.2.218693278.1701662717; _ga=GA1.1.230013880.1701390508; _ga_NMV5V64W60=GS1.1.1701662717.7.1.1701662718.0.0.0" ^
+  -H "dnt: 1" ^
+  -H "origin: https://app.axya.co" ^
+  -H "referer: https://app.axya.co/" ^
+  -H "sec-ch-ua: ^\^"Google Chrome^\^";v=^\^"119^\^", ^\^"Chromium^\^";v=^\^"119^\^", ^\^"Not?A_Brand^\^";v=^\^"24^\^"" ^
+  -H "sec-ch-ua-mobile: ?0" ^
+  -H "sec-ch-ua-platform: ^\^"Windows^\^"" ^
+  -H "sec-fetch-dest: empty" ^
+  -H "sec-fetch-mode: cors" ^
+  -H "sec-fetch-site: same-origin" ^
+  -H "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" ^
+  --data-raw "^{^\^"email^\^":^\^"gw^@weldmatic.ca^\^",^\^"password^\^":^\^" Lifesucks213^!^\^"^}" ^
+  --compressed
+
+{email: "gw@weldmatic.ca", password: " Lifesucks213!"}
+
+curl "https://app.axya.co/api/v1/login/code/" ^
+  -H "authority: app.axya.co" ^
+  -H "accept: application/json, text/plain, */*" ^
+  -H "accept-language: en" ^
+  -H "content-type: application/json" ^
+  -H "cookie: sessionid=kv2ale88lw87nrqdas8igfgro0pwnqsv; _hjSessionUser_3495031=eyJpZCI6ImRmMTk5NGI4LTZhYzItNTAzYS1hYzFlLTAzNThkOWQ4MzJiYiIsImNyZWF0ZWQiOjE3MDEzOTA4NzU3ODAsImV4aXN0aW5nIjp0cnVlfQ==; __Host-next-auth.csrf-token=140664429f004dea010378e43e0ee2cdc578024dd3d7ac17dfa3e14a55965ca2^%^7Cfe651b4db25d3d5f837d97cdd40f1594d4d15e24d39da0a915d36419c5bc06dd; __Secure-next-auth.callback-url=https^%^3A^%^2F^%^2Faxya.co; amp_abb530=qUtD2OoO54ZoCpZLNNKw_L.Z3dAd2VsZG1hdGljLmNh..1hgpg0scg.1hgpg0scg.4.0.4; _gid=GA1.2.218693278.1701662717; _ga=GA1.1.230013880.1701390508; _ga_NMV5V64W60=GS1.1.1701662717.7.1.1701662780.0.0.0" ^
+  -H "dnt: 1" ^
+  -H "origin: https://app.axya.co" ^
+  -H "referer: https://app.axya.co/" ^
+  -H "sec-ch-ua: ^\^"Google Chrome^\^";v=^\^"119^\^", ^\^"Chromium^\^";v=^\^"119^\^", ^\^"Not?A_Brand^\^";v=^\^"24^\^"" ^
+  -H "sec-ch-ua-mobile: ?0" ^
+  -H "sec-ch-ua-platform: ^\^"Windows^\^"" ^
+  -H "sec-fetch-dest: empty" ^
+  -H "sec-fetch-mode: cors" ^
+  -H "sec-fetch-site: same-origin" ^
+  -H "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" ^
+  --data-raw "^{^\^"code^\^":^\^"518257^\^",^\^"ephemeral_token^\^":^\^"21332-s54jel-86550ccb88b72acc26d83fc2fadb40ca892b1577^\^"^}" ^
+  --compressed
+
+{code: "518257", ephemeral_token: "21332-s54jel-86550ccb88b72acc26d83fc2fadb40ca892b1577"}
+
+{
+    "user": {
+        "id": 21332,
+        "username": "gw@weldmatic.ca",
+        "first_name": "Gary Weifu",
+        "last_name": "Li",
+        "language": "en"
+    },
+    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcwMTc0OTMxMCwiaWF0IjoxNzAxNjYyOTEwLCJqdGkiOiIyNjU3ODUyOGQ0MTM0NmEwYTVkNTE5MjM5NzdlZDgyYyIsInVzZXJfaWQiOjIxMzMyfQ.2cWb180aLU9dvh6DmQ4zXWHevIBgOtx6QNumZRWyXVI",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxNjkxNzEwLCJpYXQiOjE3MDE2NjI5MTAsImp0aSI6IjBlMmZkMWJlNzg4NDQ1ZDBhY2ViOGE4YzhmZmYzNTY4IiwidXNlcl9pZCI6MjEzMzJ9.JOZAhCB218tAmQPnI7-vXpyBkja3_tOheAFiiQtxOx0",
+    "company": {
+        "id": 38833,
+        "uuid": "d7b99e8c-90f2-429a-a76a-6d83de5431d0",
+        "name": "Weldmatic Automation Inc.",
+        "address": {
+            "id": 38837,
+            "street": "Unit 106 - 5290 185a St",
+            "city": "Surrey",
+            "province": "British Columbia",
+            "postal_code": "V3S 7A4",
+            "country": "Canada",
+            "longitude": null,
+            "latitude": null
+        },
+        "phone_number": "+1 (604) 579-1416",
+        "website": "https://www.weldmatic.ca/",
+        "description": "Welding Robotics, now made Affordable, Reliable and Simple",
+        "picture": "https://grad4-static-data.s3.amazonaws.com/media/companies/38833/logo.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2RFSOPTN3OPPY3UA%2F20231204%2Fca-central-1%2Fs3%2Faws4_request&X-Amz-Date=20231204T040830Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=decd92712d04c421afc282e2ae9822cf69f8b35cd6f990e4cfaa3bca5036e9ee",
+        "number_employee": 5,
+        "shop_floor_area": "1500",
+        "subscribed_to_companies": [],
+        "type": "FAB",
+        "rank_type": "REGULAR",
+        "is_email_subscribed": true,
+        "permissions": [
+            2
+        ],
+        "users": [
+            {
+                "username": "gw@weldmatic.ca",
+                "first_name": "Gary Weifu",
+                "last_name": "Li",
+                "email": "gw@weldmatic.ca",
+                "company": 38833,
+                "picture": "https://grad4-static-data.s3.amazonaws.com/media/users/21332/avatar.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2RFSOPTN3OPPY3UA%2F20231204%2Fca-central-1%2Fs3%2Faws4_request&X-Amz-Date=20231204T040830Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=436b2279db114d178f460d6349a1a41488a6ab4b0494c486634d9556b298fb63",
+                "title": "",
+                "type": "FAB",
+                "is_active": true,
+                "language": "en",
+                "date_joined": "2023-11-24T14:21:23.014573",
+                "nps_token": null,
+                "is_getting_started": null,
+                "user_type": "normal"
+            },
+            {
+                "username": "ab@weldmatic.ca",
+                "first_name": null,
+                "last_name": null,
+                "email": "ab@weldmatic.ca",
+                "company": 38833,
+                "picture": "https://grad4-static-data.s3.amazonaws.com/image/profile/Profile-image-supplier.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2RFSOPTN3OPPY3UA%2F20231204%2Fca-central-1%2Fs3%2Faws4_request&X-Amz-Date=20231204T040830Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e3532a8ee38e20df9c9fe221c8e4f91fad2c621d97c7052240b7b5c62801d0b3",
+                "title": "",
+                "type": "FAB",
+                "is_active": true,
+                "language": "fr",
+                "date_joined": "2023-11-30T18:03:59.439380",
+                "nps_token": null,
+                "is_getting_started": null,
+                "user_type": "normal"
+            }
+        ],
+        "is_active": true,
+        "is_claimed": true,
+        "disallow_marketplace_access": false,
+        "references": {},
+        "is_marketplace_enabled_buyer": true,
+        "is_order_management_enabled": false,
+        "is_pm_feature_enabled": false,
+        "past_projects_pictures": [
+            {
+                "id": 13863,
+                "url": "https://grad4-static-data.s3.amazonaws.com/media/companies/38833/shop/RM2000__MIller-min.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2RFSOPTN3OPPY3UA%2F20231204%2Fca-central-1%2Fs3%2Faws4_request&X-Amz-Date=20231204T040830Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a4a3f8d735caabb468fb2b0c719dce5f43d5f1ff449a94dc78e7a6309f42ab66"
+            },
+            {
+                "id": 13864,
+                "url": "https://grad4-static-data.s3.amazonaws.com/media/companies/38833/shop/FastPendant.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2RFSOPTN3OPPY3UA%2F20231204%2Fca-central-1%2Fs3%2Faws4_request&X-Amz-Date=20231204T040830Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=640764a6c205b2284c0b631aa9621df4eab96af88a5d4c0f08d41e699b9586d2"
+            },
+            {
+                "id": 13865,
+                "url": "https://grad4-static-data.s3.amazonaws.com/media/companies/38833/shop/RM_2000_6HW_Picture_02.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2RFSOPTN3OPPY3UA%2F20231204%2Fca-central-1%2Fs3%2Faws4_request&X-Amz-Date=20231204T040830Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=64b2792eaf21ad9aa0eae0731b98d8131c181fd7d82d3764ab65217cb0a3f297"
+            },
+            {
+                "id": 13866,
+                "url": "https://grad4-static-data.s3.amazonaws.com/media/companies/38833/shop/RM2000.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2RFSOPTN3OPPY3UA%2F20231204%2Fca-central-1%2Fs3%2Faws4_request&X-Amz-Date=20231204T040830Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5e1f95383a8f0a45cffdd42131c1bbc4ed69d16194f0d926ccf6a537a28b8bca"
+            },
+            {
+                "id": 13867,
+                "url": "https://grad4-static-data.s3.amazonaws.com/media/companies/38833/shop/Turning_Table_with_two_robots.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2RFSOPTN3OPPY3UA%2F20231204%2Fca-central-1%2Fs3%2Faws4_request&X-Amz-Date=20231204T040830Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c3e5ae6e6eb9061aab0d96dbbd666e76190cf8008f8ca08506fe44601af42e42"
+            }
+        ],
+        "shop_pictures": [
+            {
+                "id": 13868,
+                "url": "https://grad4-static-data.s3.amazonaws.com/media/companies/38833/shop/Close_up_Shot_-_Vertical_WEld.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2RFSOPTN3OPPY3UA%2F20231204%2Fca-central-1%2Fs3%2Faws4_request&X-Amz-Date=20231204T040830Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=49c60d4a42724ead5052b473a88250c4334ce0ad0e93369495fa052a0842cd4c"
+            },
+            {
+                "id": 13869,
+                "url": "https://grad4-static-data.s3.amazonaws.com/media/companies/38833/shop/Screenshot_2023-11-30_145708.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2RFSOPTN3OPPY3UA%2F20231204%2Fca-central-1%2Fs3%2Faws4_request&X-Amz-Date=20231204T040830Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=45a30a0a426c058614c609b17db38b4b67add19e6812fd0c84aff144066fd20b"
+            },
+            {
+                "id": 13870,
+                "url": "https://grad4-static-data.s3.amazonaws.com/media/companies/38833/shop/Screenshot_2023-11-30_145822.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2RFSOPTN3OPPY3UA%2F20231204%2Fca-central-1%2Fs3%2Faws4_request&X-Amz-Date=20231204T040830Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4d1dbf548c918e77cded7278827bf6af9ed8f9c4371c0954a292606c371a3fae"
+            }
+        ],
+        "documents": [
+            {
+                "pk": 13871,
+                "file_name": "Catalog_Weldmatic_2023",
+                "file_extension": "pdf",
+                "file_url": "https://grad4-static-data.s3.amazonaws.com/media/companies/38833/shop/Catalog_Weldmatic_2023.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2RFSOPTN3OPPY3UA%2F20231204%2Fca-central-1%2Fs3%2Faws4_request&X-Amz-Date=20231204T040830Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e5db5496e4a675130997a7a989ae98cf32ac4a720392983c33c7e50e57da9cc0",
+                "file_size": 4883743,
+                "date": "2023-11-30T18:03:14.235202"
+            }
+        ],
+        "additional_details": "Weldmatic Automation Inc. is a Canadian company that dedicated to provide Affordable, Reliable and Simple Welding Robotics to the metal fab industry. We are the authorized distributor of ROBOTMETA® robotics across Canada.\r\n\r\nVisit our website and contact us to learn more. https://www.weldmatic.ca/\r\n\r\nRobotMeta - Plug, Play, and Weld\r\n- The simplistic and yet highly efficient and reliable teaching pendant allows you to get the hang of the control in less than 30 mins.\r\n- Our industrial-grade robotic arm provides higher productivities and capabilities.\r\n- Not only are we 30% lower price than our competitors, we also offer flexible payment plans such as 3rd-party financing and rent-to-own options.\r\n- We thrive on continuously providing excellent customer services including demonstration, installation, trouble shooting, maintenance and repairs.\r\n\r\nRobotMeta Pro - Redefine Metal Fabrication\r\n- Ready to up your automation game? We are your one-stop shop for integrating robotic welding with positioners, turning tables & tracks!\r\n- Full service package including feasibility consultancy, estimating, designing, testing, building and commissioning.",
+        "additional_details_rich_text": "{\"blocks\":[{\"key\":\"22u25\",\"text\":\"Weldmatic Automation Inc. is a Canadian company that dedicated to provide Affordable, Reliable and Simple Welding Robotics to the metal fab industry. We are the authorized distributor of ROBOTMETA® robotics across Canada.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":221,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"c7cip\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"243ne\",\"text\":\"Visit our website and contact us to learn more. https://www.weldmatic.ca/\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":73,\"style\":\"BOLD\"}],\"entityRanges\":[{\"offset\":48,\"length\":25,\"key\":0}],\"data\":{}},{\"key\":\"6u8td\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"3cqui\",\"text\":\"RobotMeta - Plug, Play, and Weld\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":32,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"95h6l\",\"text\":\"- The simplistic and yet highly efficient and reliable teaching pendant allows you to get the hang of the control in less than 30 mins.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":25,\"length\":46,\"style\":\"BOLD\"},{\"offset\":118,\"length\":16,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"1ri1t\",\"text\":\"- Our industrial-grade robotic arm provides higher productivities and capabilities.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":44,\"length\":38,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"c9m8u\",\"text\":\"- Not only are we 30% lower price than our competitors, we also offer flexible payment plans such as 3rd-party financing and rent-to-own options.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":18,\"length\":15,\"style\":\"BOLD\"},{\"offset\":101,\"length\":43,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"ev4li\",\"text\":\"- We thrive on continuously providing excellent customer services including demonstration, installation, trouble shooting, maintenance and repairs.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":76,\"length\":70,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"f4tnp\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"43me7\",\"text\":\"RobotMeta Pro - Redefine Metal Fabrication\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":42,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"1n9rp\",\"text\":\"- Ready to up your automation game? We are your one-stop shop for integrating robotic welding with positioners, turning tables & tracks!\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":62,\"length\":74,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"44ids\",\"text\":\"- Full service package including feasibility consultancy, estimating, designing, testing, building and commissioning.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":33,\"length\":84,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{\"0\":{\"type\":\"LINK\",\"mutability\":\"MUTABLE\",\"data\":{\"href\":\"https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbkliTzhVNVVmdWdidXZQMXFvVi1pRDE0WDlvUXxBQ3Jtc0tuU293Z2M1Q21sZjlDQy1zak1XN3VBMFluV3FYc3k2a1habzhDbE9XOWFxbEduYzhrUFYtNHlBRTJXTVZqX2dXLWdsZ29CODRPQjJxMzRZQVBQWkJ3ckZUVDhXWVhJRXAwZmhwVW5vQl92Z1kxM1Jncw&q=https%3A%2F%2Fwww.weldmatic.ca%2F&v=SaJwW9PXVbQ\",\"rel\":\"nofollow\",\"target\":\"_blank\",\"url\":\"https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbkliTzhVNVVmdWdidXZQMXFvVi1pRDE0WDlvUXxBQ3Jtc0tuU293Z2M1Q21sZjlDQy1zak1XN3VBMFluV3FYc3k2a1habzhDbE9XOWFxbEduYzhrUFYtNHlBRTJXTVZqX2dXLWdsZ29CODRPQjJxMzRZQVBQWkJ3ckZUVDhXWVhJRXAwZmhwVW5vQl92Z1kxM1Jncw&q=https%3A%2F%2Fwww.weldmatic.ca%2F&v=SaJwW9PXVbQ\"}}}}",
+        "requires_consolidated_report": false,
+        "plan_name": "premium",
+        "profile_completeness": {
+            "company_info": {
+                "weightage": 20,
+                "is_complete": true
+            },
+            "manufacturing_capabilities": {
+                "weightage": 20,
+                "is_complete": true
+            },
+            "certifications": {
+                "weightage": 10,
+                "is_complete": true
+            },
+            "industry_expertise": {
+                "weightage": 10,
+                "is_complete": true
+            },
+            "shop_pictures": {
+                "weightage": 15,
+                "is_complete": true
+            },
+            "past_project_pictures": {
+                "weightage": 15,
+                "is_complete": true
+            },
+            "documents": {
+                "weightage": 10,
+                "is_complete": true
+            },
+            "total": 100
+        }
+    }
+}
+
+
+
+
