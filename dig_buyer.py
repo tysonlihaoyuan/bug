@@ -102,7 +102,8 @@ def digData():
 
         companiesDetailBuyer=[]
         formateCompanies_buyer(companiesResultBuyer,companiesDetailBuyer)
-        for i in range (2,59):
+        # for i in range (2,59):
+        for i in range (2,4):
             print(i)
             targetUrl = getBuyer_url_number+str(i)
             
@@ -112,11 +113,12 @@ def digData():
             formateCompanies_buyer(companiesResultBuyer_number,companiesDetailBuyer)
         fieldsIds = ['id','name']
         fieldsFinal=['id','name','phone_number','website','email','country','city','street']
-        fileName_Buyer="buyer.csv"  
+        fileName_Buyer="buyer.csv"
+        fileName_Buyer_final="buyerFinal.csv"  
         writeToCSV(fieldsIds,fileName_Buyer,companiesDetailBuyer)
     
         finalResult =getFinalResult(searchBuyer_url,hearderAuth)
-        writeToCSV(fieldsFinal,fileName_Buyer,finalResult)
+        writeToCSV(fieldsFinal,fileName_Buyer_final,finalResult)
 
 def getFinalResult(searchBuyer_url,hearderAuth):
     buyers_csv=read_csv("buyer.csv")
@@ -129,6 +131,7 @@ def getFinalResult(searchBuyer_url,hearderAuth):
         buyers_search_data = json.loads(buyers_search_response.text)
 
         tempdic={}
+        tempdic['id']=buyers_search_data.get('id')
         tempdic['name']=buyers_search_data.get('name')
         tempdic['phone_number']=buyers_search_data.get('phone_number')
         tempdic['website']=buyers_search_data.get('website')
@@ -143,10 +146,10 @@ def formateCompanies_buyer(companiesResult,companiesDetail):
         for company in companiesResult:
             id =company.get('id')
             name=company.get('company').get('name')
-            country=company.get('company').get('country')
-            city=company.get('company').get('city')
-            street=company.get('company').get('street')
-            postcode = company.get('company').get('postal_code')
+            # country=company.get('company').get('country')
+            # city=company.get('company').get('city')
+            # street=company.get('company').get('street')
+            # postcode = company.get('company').get('postal_code')
         
 
             tempDic={}

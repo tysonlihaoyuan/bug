@@ -110,6 +110,7 @@ def digData():
         fieldsIds = ['id','name']
         fieldsFinal=['id','name','phone_number','website','email','country','city','street']
         fileName_Supplier="supplier.csv"   
+        fileName_Supplier_final="supplierFinal.csv" 
         
         writeToCSV(fieldsIds,fileName_Supplier,companiesDetailSupplier)
     
@@ -127,6 +128,7 @@ def getFinalResult(searchSupplier_url,hearderAuth):
         supplier_search_data = json.loads(supplier_search_response.text)
 
         tempdic={}
+        tempdic['id']=supplier_search_data.get('id')
         tempdic['name']=supplier_search_data.get('name')
         tempdic['phone_number']=supplier_search_data.get('phone_number')
         tempdic['website']=supplier_search_data.get('website')
