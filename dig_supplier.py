@@ -94,8 +94,8 @@ def digData():
         
         writeToCSV(fieldsIds,fileName_Supplier,companiesDetailSupplier)
     
-        getFinalResult(searchSupplier_url,hearderAuth)
-        writeToCSV(fieldsFinal,fileName_Supplier,companiesDetailSupplier)
+        finalResult =getFinalResult(searchSupplier_url,hearderAuth)
+        writeToCSV(fieldsFinal,fileName_Supplier,finalResult)
 
 def getFinalResult(searchSupplier_url,hearderAuth):
     suppliers_csv=read_csv("supplier.csv")
@@ -116,6 +116,7 @@ def getFinalResult(searchSupplier_url,hearderAuth):
         tempdic['city']=supplier_search_data['address'].get('city')
         tempdic['street']=supplier_search_data['address'].get('street')
         result.append(tempdic)
+    return result
 
 
 def formateCompanies_supplier(companiesResult,companiesDetail):

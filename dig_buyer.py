@@ -12,7 +12,7 @@ def digData():
     user_url ="https://app.axya.co/api/v1/company/user/"
     getBuyer_url="https://app.axya.co/_next/data/Vmfu08oe_-eTMtqKGdeUG/en/search/buyers.json"
     getBuyer_url_number="https://app.axya.co/_next/data/Vmfu08oe_-eTMtqKGdeUG/en/search/buyers.json?page="
-    searchBuyer_url="https://app.axya.co/api/v1/supplierProfile/"
+    searchBuyer_url="https://app.axya.co/api/v1/buyersDiscovery/"
     loginCredential ={
             'email': "lihaoyuan0531@hotmail.com",
             'password':'Tyson0531!'
@@ -91,3 +91,64 @@ def digData():
             buyersData_number= json.loads(responseBuyers_number.text)
             companiesResultBuyer_number=buyersData_number['pageProps']['results']
             formateCompanies_buyer(companiesResultBuyer_number,companiesDetailBuyer)
+        fieldsIds = ['id','name']
+        fieldsFinal=['id','name','phone_number','website','email','country','city','street']
+        fileName_Buyer="buyer.csv"  
+        writeToCSV(fieldsIds,fileName_Buyer,companiesDetailBuyer)
+    
+        finalResult =getFinalResult(searchBuyer_url,hearderAuth)
+        writeToCSV(fieldsFinal,fileName_Buyer,finalResult)
+
+def getFinalResult(searchBuyer_url,hearderAuth):
+    buyers_csv=read_csv("buyer.csv")
+    buyersIds=buyers_csv['id'].tolist()
+    result = []
+    for id in buyersIds:
+        searchBuyers_url_target=searchBuyer_url+str(id)
+        buyers_search_response=requests.get(url=searchBuyers_url_target,headers=hearderAuth)
+
+        buyers_search_data = json.loads(buyers_search_response.text)
+
+        tempdic={}
+        tempdic['name']=buyers_search_data.get('name')
+        tempdic['phone_number']=buyers_search_data.get('phone_number')
+        tempdic['website']=buyers_search_data.get('website')
+        tempdic['email']=buyers_search_data.get('email')
+        tempdic['country']=buyers_search_data['address'].get('country')
+        tempdic['city']=buyers_search_data['address'].get('city')
+        tempdic['street']=buyers_search_data['address'].get('street')
+        result.append(tempdic)
+    return result
+
+def formateCompanies_buyer(companiesResult,companiesDetail):
+        for company in companiesResult:
+            id =company.get('id')
+            name=company.get('company').get('name')
+            country=company.get('company').get('country')
+            city=company.get('company').get('city')
+            street=company.get('company').get('street')
+            postcode = company.get('company').get('postal_code')
+        
+
+            tempDic={}
+            tempDic['id']=company.get('id')
+            tempDic['name']=company.get('company').get('name')
+
+            companiesDetail.append(tempDic)
+
+def writeToCSV(fields,fileName,content):
+    
+    with open(fileName,'w', newline='', encoding="utf-8")as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames = fields)  
+            
+        # writing headers (field names)  
+        writer.writeheader()  
+            
+        # writing data rows  
+        writer.writerows(content)
+        print("done")  
+def main():
+    digData()
+
+if __name__ == "__main__":
+    main()
